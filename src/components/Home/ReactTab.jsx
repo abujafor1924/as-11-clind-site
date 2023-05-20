@@ -9,12 +9,10 @@ const ReactTab = () => {
   const [subCategory, setSubCategory] = useState("");
 
   useEffect(() => {
-    fetch(
-      `https://assingment-eleven-server.vercel.app/all-datas/${subCategory}`
-    )
+    fetch(`https://assingment-eleven-server.vercel.app/all-data?${subCategory}`)
       .then((res) => res.json())
       .then((data) => setDataList(data));
-  }, [subCategory, dataList]);
+  }, [subCategory]);
 
   const handleClick = () => {
     alert("Please Login  now ");
@@ -23,16 +21,13 @@ const ReactTab = () => {
     <div>
       <h1 className="text-3xl font-bold px-5 mt-5 "> Sub Category</h1>
       <Tabs className="px-5 m-4 ">
-        <TabList
-          // onChange={handleSubCategoryChange}
-          className="text-xl font-bold text-emerald-900 hover:text-sky-800"
-        >
+        <TabList className="text-xl font-bold text-emerald-900 hover:text-sky-800">
           <Tab onClick={() => setSubCategory("DisneyPrincess")}>
             Disney princess
           </Tab>
           <Tab onClick={() => setSubCategory("FrozenDolls")}>frozen dolls</Tab>
           <Tab onClick={() => setSubCategory("AnimationCharacters")}>
-            animation characters
+            Donald Duck
           </Tab>
         </TabList>
 
@@ -41,7 +36,7 @@ const ReactTab = () => {
             <TabPanel key={data._id}>
               <div className="card w-96 bg-base-100 shadow-xl">
                 <figure>
-                  <img src={data.photo} alt="Shoes" />
+                  <img src={data.photo} />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">{data.name}</h2>

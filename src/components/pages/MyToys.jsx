@@ -29,7 +29,7 @@ const MyToys = () => {
   const handleDelete = (id) => {
     const proside = confirm("Are You Sure Delete?");
     if (proside) {
-      fetch(`http://localhost:4000/delete-data/${id}`, {
+      fetch(`https://assingment-eleven-server.vercel.app/delete-data/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -55,8 +55,8 @@ const MyToys = () => {
             <tr>
               <th>Product</th>
               <th>Name</th>
-              <th>Categtory</th>
-              <th>Descrioption</th>
+              <th>Sub Categtory</th>
+
               <th>Delet&Update</th>
               <th></th>
             </tr>

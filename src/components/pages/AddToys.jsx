@@ -157,9 +157,9 @@ const AddToys = () => {
                 <option disabled selected>
                   Select Sub Category
                 </option>
-                <option value={"DisneyPrincess"}>Disney princes</option>
-                <option value={"FrozenDolls"}> frozen dolls</option>
-                <option value={"AnimationCharacters"}> donald duck</option>
+                <option value={"DisneyPrincess"}>Disney Princes</option>
+                <option value={"FrozenDolls"}> Frozen dolls</option>
+                <option value={"DonaldDuck"}>Donald Duck</option>
               </select>
             </label>
           </div>

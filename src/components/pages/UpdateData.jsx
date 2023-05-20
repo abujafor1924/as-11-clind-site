@@ -57,8 +57,8 @@ const UpdateData = ({ pd, handleDelete, id, setId }) => {
           <br />
           <span className="badge badge-ghost badge-sm">{pd.email}</span>
         </td>
-        <td>{pd.category}</td>
-        <td>{pd.description}</td>
+        <td>{pd.subCategory}</td>
+
         <th className="">
           {/* updated start */}
           <div>

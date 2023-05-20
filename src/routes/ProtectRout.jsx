@@ -6,7 +6,7 @@ import { AuthContext } from "../components/Provider/AuthProvider";
 const ProtectRout = ({ children }) => {
   const { user, loding } = useContext(AuthContext);
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
 
   if (loding) {
     return (

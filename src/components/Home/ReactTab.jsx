@@ -6,11 +6,11 @@ import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
 const ReactTab = () => {
   const [dataList, setDataList] = useState([]);
-  const [subCategory, setSubCategory] = useState("");
+  const [subCategory, setSubCategory] = useState("FrozenDolls");
 
   useEffect(() => {
     fetch(
-      `https://assingment-eleven-server.vercel.app/all-data?subCategory=${subCategory}`
+      `https://assingment-eleven-server.vercel.app/getcategory?cat=${subCategory}`
     )
       .then((res) => res.json())
       .then((data) => setDataList(data));

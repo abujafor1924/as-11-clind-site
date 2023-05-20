@@ -23,7 +23,7 @@ const AddToys = () => {
     const displayName = form.displayName.value;
     const photo = form.photo.value;
     const description = form.description.value;
-    console.log(subCategory);
+    // console.log(subCategory);
 
     const uplodData = {
       name,

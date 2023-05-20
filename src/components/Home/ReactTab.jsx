@@ -1,76 +1,141 @@
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 import { FaRegStar, FaStar } from "react-icons/fa";
 const ReactTab = () => {
   const [dataList, setDataList] = useState([]);
-  const [subCategory, setSubCategory] = useState("FrozenDolls");
+  const [subCategory, setSubCategory] = useState(true);
 
   useEffect(() => {
     fetch(
       `https://assingment-eleven-server.vercel.app/getcategory?cat=${subCategory}`
     )
       .then((res) => res.json())
-      .then((data) => setDataList(data));
+      .then((data) => {
+        const filter = data.filter((pd) => pd.subCategory == subCategory);
+        setDataList(filter);
+      });
   }, [subCategory]);
 
   const handleClick = () => {
-    alert("Please Login  now ");
+    alert("Please login First");
   };
+  // console.log(dataList);
   return (
     <div>
       <h1 className="text-3xl font-bold px-5 mt-5 "> Sub Category</h1>
       <Tabs className="md:px-5 md:m-4 ">
         <TabList className="text-xl font-bold text-emerald-900 hover:text-sky-800">
           <Tab onClick={() => setSubCategory("DisneyPrincess")}>
-            Disney princess
+            Disney Princess
           </Tab>
-          <Tab onClick={() => setSubCategory("FrozenDolls")}>frozen dolls</Tab>
+          <Tab onClick={() => setSubCategory("FrozenDolls")}>Frozen Dolls</Tab>
           <Tab onClick={() => setSubCategory("DonaldDuck")}>Donald Duck</Tab>
         </TabList>
-
-        {dataList.length > 0 ? (
-          dataList.map((data) => (
-            <TabPanel key={data._id}>
-              <div className="card w-96 bg-base-100 shadow-xl">
-                <figure>
-                  <img src={data.photo} />
+        <TabPanel>
+          <div className="flex gap-4">
+            {dataList.map((pd) => (
+              <div className="card w-96 bg-base-100 shadow-xl " key={pd._id}>
+                <figure className="px-10 pt-10">
+                  <img src={pd.photo} alt="Shoes" className="rounded-xl" />
                 </figure>
-                <div className="card-body">
-                  <h2 className="card-title">{data.name}</h2>
-                  <h2 className="card-title">Price : ${data.price}</h2>
-
-                  <p className="py-4">
+                <div className="card-body items-center text-center">
+                  <h2 className="card-title">{pd.name}</h2>
+                  <p>Price : ${pd.price}</p>
+                  <p>
                     <Rating
-                      placeholderRating={data.rating}
+                      placeholderRating={pd.rating}
                       readonly
                       emptySymbol={<FaRegStar />}
                       placeholderSymbol={<FaStar />}
                       fullSymbol={<FaStar />}
                       className="p-1"
                     />
-                    {data.rating}
-                    <div className="card-actions justify-end">
-                      <Link
-                        onClick={handleClick}
-                        to={"/login"}
-                        className="btn btn-primary"
-                      >
-                        Buy Now
-                      </Link>
-                    </div>
                   </p>
+                  <div className="card-actions">
+                    <Link
+                      onClick={handleClick}
+                      to={"/login"}
+                      className="btn btn-primary"
+                    >
+                      Buy Now
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </TabPanel>
-          ))
-        ) : (
-          <TabPanel>
-            <h2>No data available</h2>
-          </TabPanel>
-        )}
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="flex gap-4">
+            {dataList.map((pd) => (
+              <div className="card w-96 bg-base-100 shadow-xl " key={pd._id}>
+                <figure className="px-10 pt-10">
+                  <img src={pd.photo} alt="Shoes" className="rounded-xl" />
+                </figure>
+                <div className="card-body items-center text-center">
+                  <h2 className="card-title">{pd.name}</h2>
+                  <p>Price : ${pd.price}</p>
+                  <p>
+                    <Rating
+                      placeholderRating={pd.rating}
+                      readonly
+                      emptySymbol={<FaRegStar />}
+                      placeholderSymbol={<FaStar />}
+                      fullSymbol={<FaStar />}
+                      className="p-1"
+                    />
+                  </p>
+                  <div className="card-actions">
+                    <Link
+                      onClick={handleClick}
+                      to={"/login"}
+                      className="btn btn-primary"
+                    >
+                      Buy Now
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="flex gap-4">
+            {dataList.map((pd) => (
+              <div className="card w-96 bg-base-100 shadow-xl " key={pd._id}>
+                <figure className="px-10 pt-10">
+                  <img src={pd.photo} alt="Shoes" className="rounded-xl" />
+                </figure>
+                <div className="card-body items-center text-center">
+                  <h2 className="card-title">{pd.name}</h2>
+                  <p>Price : ${pd.price}</p>
+                  <p>
+                    <Rating
+                      placeholderRating={pd.rating}
+                      readonly
+                      emptySymbol={<FaRegStar />}
+                      placeholderSymbol={<FaStar />}
+                      fullSymbol={<FaStar />}
+                      className="p-1"
+                    />
+                  </p>
+                  <div className="card-actions">
+                    <Link
+                      onClick={handleClick}
+                      to={"/login"}
+                      className="btn btn-primary"
+                    >
+                      Buy Now
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </TabPanel>
       </Tabs>
     </div>
   );

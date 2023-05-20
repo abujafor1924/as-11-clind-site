@@ -9,7 +9,9 @@ const ReactTab = () => {
   const [subCategory, setSubCategory] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:4000/all-datas/${subCategory}`)
+    fetch(
+      `https://assingment-eleven-server.vercel.app/all-datas/${subCategory}`
+    )
       .then((res) => res.json())
       .then((data) => setDataList(data));
   }, [subCategory, dataList]);

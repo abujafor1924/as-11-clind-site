@@ -58,7 +58,9 @@ const router = createBrowserRouter([
           </ProtectRout>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/all-data/${params.id}`),
+          fetch(
+            `https://assingment-eleven-server.vercel.app/all-data/${params.id}`
+          ),
       },
     ],
   },

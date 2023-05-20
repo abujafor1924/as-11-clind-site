@@ -12,11 +12,14 @@ const MyToys = () => {
   const [myProduct, setMyProduct] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/some-data?email=${user?.email}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(),
-    })
+    fetch(
+      `https://assingment-eleven-server.vercel.app/some-data?email=${user?.email}`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         setMyProduct(result);

@@ -9,7 +9,7 @@ const Update = ({ pd }) => {
     const quantity = form.quantity.value;
     const update = { price, description, quantity };
 
-    fetch(`http://localhost:4000/update-data/${pd._id}`, {
+    fetch(`https://assingment-eleven-server.vercel.app/update-data/${pd._id}`, {
       method: "PUT",
 
       headers: {

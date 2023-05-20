@@ -14,7 +14,7 @@ const AddToys = () => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-    const category = form.category.value;
+    // const category = form.category.value;
     const price = form.price.value;
     const subCategory = selectedOption;
     const rating = form.rating.value;
@@ -27,7 +27,7 @@ const AddToys = () => {
     const uplodData = {
       name,
       price,
-      category,
+
       subCategory,
       rating,
       photo,
@@ -38,7 +38,7 @@ const AddToys = () => {
     };
     console.log(uplodData);
 
-    fetch("http://localhost:4000/product", {
+    fetch("https://assingment-eleven-server.vercel.app/product", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(uplodData),

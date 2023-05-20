@@ -7,6 +7,7 @@ import useTitle from "../../hook/useTitle";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [id, setId] = useState({});
+  const [sort, setSort] = useState("accend");
   useTitle("My-Toys");
 
   const [myProduct, setMyProduct] = useState([]);
@@ -45,8 +46,19 @@ const MyToys = () => {
     }
   };
 
+  // useEffect(() => {
+  //   fetch(`https://assingment-eleven-server.vercel.app/sortData?sort=${sort}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setSort(data));
+  // }, [sort]);
+  // console.log(sort);
+
+  const handaleSort = (sortData) => {
+    setSort(sortData);
+  };
   return (
     <div>
+      <button onClick={handaleSort}>Sort</button>
       {/* <h1>My Toyes : {myProduct.length}</h1> */}
       <div className="overflow-x-auto w-full p-4 ">
         <table className="table w-full ml-8 p-4">

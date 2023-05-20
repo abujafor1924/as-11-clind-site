@@ -24,10 +24,13 @@ const ReactTab = () => {
   };
   // console.log(dataList);
   return (
-    <div>
-      <h1 className="text-3xl font-bold px-5 mt-5 "> Sub Category</h1>
+    <div className=" px-8 py-4">
+      <h1 className="text-3xl font-bold px-5  mt-5 text-center  ">
+        {" "}
+        Sub Category
+      </h1>
       <Tabs className="md:px-5 md:m-4 ">
-        <TabList className="text-xl font-bold text-emerald-900 hover:text-sky-800">
+        <TabList className="text-xl font-bold text-emerald-900 hover:text-sky-800 m-8">
           <Tab onClick={() => setSubCategory("DisneyPrincess")}>
             Disney Princess
           </Tab>

@@ -75,7 +75,7 @@ const UpdateData = ({ pd, handleDelete, id, setId }) => {
             <div className="modal modal-bottom sm:modal-middle">
               <div className="modal-box">
                 {/* up date toy star */}
-                <form onSubmit={handleUpdate}>
+                <form onSubmit={handleUpdate} className="p-8">
                   <div className="flex mx-8">
                     <div className="form-control mr-4 w-1/2">
                       <label className="label">
@@ -118,10 +118,13 @@ const UpdateData = ({ pd, handleDelete, id, setId }) => {
                         ></textarea>
                       </label>
                     </div>
-                    <div className="form-control">
-                      <div className="modal-action mx-auto">
+                    <div className="form-control flex">
+                      <div className="modal-action mx-auto bg-green-400 p-4 rounded">
+                        <input type="submit" value="update Button" />
+                      </div>
+                      <div className="modal-action mx-auto ">
                         <label htmlFor="my-modal-6" className="btn btn-info">
-                          <input type="submit" value="update Button" />
+                          <button type="submit" value="X" />x
                         </label>
                       </div>
                     </div>

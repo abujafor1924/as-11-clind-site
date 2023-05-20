@@ -1,4 +1,5 @@
 import useTitle from "../../hook/useTitle";
+import Frezon from "./Frezon";
 import NewAdd from "./NewAdd";
 
 import ReactTab from "./ReactTab";
@@ -19,7 +20,7 @@ const Home = () => {
       <ReleventPic></ReleventPic>
       <ReactTab></ReactTab>
       <Shoptoy></Shoptoy>
-      <Sub></Sub>
+      <Frezon></Frezon>
     </div>
   );
 };

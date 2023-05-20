@@ -28,9 +28,7 @@ const ReactTab = () => {
             Disney princess
           </Tab>
           <Tab onClick={() => setSubCategory("FrozenDolls")}>frozen dolls</Tab>
-          <Tab onClick={() => setSubCategory("AnimationCharacters")}>
-            Donald Duck
-          </Tab>
+          <Tab onClick={() => setSubCategory("DonaldDuck")}>Donald Duck</Tab>
         </TabList>
 
         {dataList.length > 0 ? (

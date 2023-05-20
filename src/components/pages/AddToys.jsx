@@ -23,11 +23,11 @@ const AddToys = () => {
     const displayName = form.displayName.value;
     const photo = form.photo.value;
     const description = form.description.value;
+    console.log(subCategory);
 
     const uplodData = {
       name,
       price,
-
       subCategory,
       rating,
       photo,
@@ -154,10 +154,8 @@ const AddToys = () => {
                 onChange={handleSelectChange}
                 value={selectedOption}
               >
-                <option disabled selected>
-                  Select Sub Category
-                </option>
-                <option value={"DisneyPrincess"}>Disney Princes</option>
+                <option selected>select sub category</option>
+                <option value={"DisneyPrincess"}> Disney Princess</option>
                 <option value={"FrozenDolls"}> Frozen dolls</option>
                 <option value={"DonaldDuck"}>Donald Duck</option>
               </select>

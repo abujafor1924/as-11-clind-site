@@ -22,7 +22,7 @@ const Slidebar = () => {
     fontWeight: "bold",
   };
   return (
-    <div className="App w-full -mt-10">
+    <div className="App  w-full -mt-8  md:ml-1 ">
       <div style={{ textAlign: "center" }}>
         <div
           style={{

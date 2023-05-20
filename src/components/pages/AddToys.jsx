@@ -36,7 +36,7 @@ const AddToys = () => {
       displayName,
       email,
     };
-    console.log(uplodData);
+    // console.log(uplodData);
 
     fetch("https://assingment-eleven-server.vercel.app/product", {
       method: "POST",

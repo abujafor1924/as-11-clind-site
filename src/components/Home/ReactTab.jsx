@@ -9,7 +9,9 @@ const ReactTab = () => {
   const [subCategory, setSubCategory] = useState("");
 
   useEffect(() => {
-    fetch(`https://assingment-eleven-server.vercel.app/all-data?${subCategory}`)
+    fetch(
+      `https://assingment-eleven-server.vercel.app/all-data?subCategory=${subCategory}`
+    )
       .then((res) => res.json())
       .then((data) => setDataList(data));
   }, [subCategory]);
@@ -20,7 +22,7 @@ const ReactTab = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold px-5 mt-5 "> Sub Category</h1>
-      <Tabs className="px-5 m-4 ">
+      <Tabs className="md:px-5 md:m-4 ">
         <TabList className="text-xl font-bold text-emerald-900 hover:text-sky-800">
           <Tab onClick={() => setSubCategory("DisneyPrincess")}>
             Disney princess

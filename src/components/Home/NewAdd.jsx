@@ -10,7 +10,7 @@ const NewAdd = () => {
   return (
     <div>
       <h1 className="text-4xl font-bold text-center">Top Categories</h1>
-      <div className="grid grid-cols-3 gap-2 w-10/12 mx-auto">
+      <div className="grid md:grid-cols-3 gap-2 w-10/12 mx-auto">
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
             <img src={pic1} alt="Shoes" className="rounded-xl w-full" />

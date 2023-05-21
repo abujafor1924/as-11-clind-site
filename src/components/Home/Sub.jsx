@@ -2,7 +2,7 @@ const Sub = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold text-center my-8 ">New Arrible</h1>
-      <div className="grid grid-cols-3 gap-4 w-10/12 mx-auto m-4">
+      <div className="grid md:grid-cols-3 gap-4 w-10/12 mx-auto m-4">
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">
             <img

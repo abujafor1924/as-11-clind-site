@@ -72,7 +72,7 @@ const ReactTab = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="flex gap-4">
+          <div className="md:flex gap-4">
             {dataList.map((pd) => (
               <div className="card w-96 bg-base-100 shadow-xl " key={pd._id}>
                 <figure className="px-10 pt-10">

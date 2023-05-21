@@ -7,9 +7,7 @@ import useTitle from "../../hook/useTitle";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [id, setId] = useState({});
-  // const [sort, setSort] = useState("accend");
   useTitle("My-Toys");
-
   const [myProduct, setMyProduct] = useState([]);
 
   useEffect(() => {
@@ -46,12 +44,6 @@ const MyToys = () => {
     }
   };
 
-  // useEffect(() => {
-  //   fetch(`https://assingment-eleven-server.vercel.app/sortData?sort=${sort}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setSort(data));
-  // }, [sort]);
-  // console.log(sort);
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleSelectChange = (event) => {

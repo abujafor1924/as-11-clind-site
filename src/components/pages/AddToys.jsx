@@ -14,7 +14,7 @@ const AddToys = () => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-    // const category = form.category.value;
+
     const price = parseInt(form.price.value);
     const subCategory = selectedOption;
     const rating = parseInt(form.rating.value);

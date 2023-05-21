@@ -7,7 +7,7 @@ import useTitle from "../../hook/useTitle";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [id, setId] = useState({});
-  const [sort, setSort] = useState("accend");
+  // const [sort, setSort] = useState("accend");
   useTitle("My-Toys");
 
   const [myProduct, setMyProduct] = useState([]);
@@ -52,13 +52,26 @@ const MyToys = () => {
   //     .then((data) => setSort(data));
   // }, [sort]);
   // console.log(sort);
+  const [selectedOption, setSelectedOption] = useState("");
 
-  const handaleSort = (sortData) => {
-    setSort(sortData);
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
   };
   return (
     <div>
-      <button onClick={handaleSort}>Sort</button>
+      <div className="form-control w-48 ml-20 mt-10">
+        <label className="input-group input-group-vertical">
+          <select
+            className="select select-bordered w-full text-2xl font-semibold ml-3 "
+            onChange={handleSelectChange}
+            value={selectedOption}
+          >
+            <option selected>sort by price</option>
+            <option value={1}> Accending</option>
+            <option value={-1}> Dissending</option>
+          </select>
+        </label>
+      </div>
       {/* <h1>My Toyes : {myProduct.length}</h1> */}
       <div className="overflow-x-auto w-full p-4 ">
         <table className="table w-full ml-8 p-4">

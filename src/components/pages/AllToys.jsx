@@ -57,7 +57,9 @@ const AllToys = () => {
         </div>
       </div>
       <div className="overflow-x-auto px-4">
-        <h1 className="text-2xl font-semibold">All toyes : {product.length}</h1>
+        <h1 className="text-2xl font-semibold ml-3 p-4">
+          All toyes : {product.length}
+        </h1>
         <table className="table table-compact w-full ">
           <thead>
             <tr>

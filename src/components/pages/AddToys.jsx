@@ -130,12 +130,6 @@ const AddToys = () => {
               <span className="label-text">Sub-category</span>
             </label>
             <label className="input-group input-group-vertical">
-              {/* <input
-                type="text"
-                placeholder="Sub-category"
-                name="subcategory"
-                className="input input-bordered"
-              /> */}
               <select
                 className="select select-bordered w-full "
                 onChange={handleSelectChange}

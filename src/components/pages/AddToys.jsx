@@ -23,7 +23,6 @@ const AddToys = () => {
     const displayName = form.displayName.value;
     const photo = form.photo.value;
     const description = form.description.value;
-    // console.log(subCategory);
 
     const uplodData = {
       name,
@@ -69,19 +68,7 @@ const AddToys = () => {
               />
             </label>
           </div>
-          {/* <div className="form-control w-1/2">
-            <label className="label">
-              <span className="label-text">Category</span>
-            </label>
-            <label className="input-group input-group-vertical">
-              <input
-                type="text"
-                placeholder="Category"
-                name="category"
-                className="input input-bordered"
-              />
-            </label>
-          </div> */}
+
           <div className="form-control mr-4 w-1/2">
             <label className="label">
               <span className="label-text">Photo Url </span>

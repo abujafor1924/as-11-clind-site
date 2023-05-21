@@ -9,10 +9,13 @@ const MyToys = () => {
   const [id, setId] = useState({});
   useTitle("My-Toys");
   const [myProduct, setMyProduct] = useState([]);
+  const [selectedOption, setSelectedOption] = useState("");
+  const [sorting, setSorting] = useState("asc");
 
   useEffect(() => {
     fetch(
-      `https://assingment-eleven-server.vercel.app/some-data?email=${user?.email}`,
+      // `https://assingment-eleven-server.vercel.app/some-data?email=${user?.email}`,
+      `https://assingment-eleven-server.vercel.app/some-data?sort=${sorting}&email=${user?.email}`,
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -23,7 +26,7 @@ const MyToys = () => {
       .then((result) => {
         setMyProduct(result);
       });
-  }, [user, myProduct]);
+  }, [sorting, myProduct]);
 
   const handleDelete = (id) => {
     const proside = confirm("Are You Sure Delete?");
@@ -44,10 +47,12 @@ const MyToys = () => {
     }
   };
 
-  const [selectedOption, setSelectedOption] = useState("");
-
+  // console.log(sorted);
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
+    setSorting(event.target.value);
+    // console.log(event);
+    // console.log(selectedOption);
   };
   return (
     <div>
@@ -59,8 +64,8 @@ const MyToys = () => {
             value={selectedOption}
           >
             <option selected>sort by price</option>
-            <option value={1}> Accending</option>
-            <option value={-1}> Dissending</option>
+            <option value={"desc"}> Accending</option>
+            <option value={"asc"}> Dissending</option>
           </select>
         </label>
       </div>

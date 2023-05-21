@@ -28,7 +28,6 @@ const AllToys = () => {
   };
   return (
     <div>
-      {/* <h1>All toyes : {product.length}</h1> */}
       <div className="p-6 ml-[38%]">
         <div className="form-control mx-auto">
           <div className="input-group">
@@ -58,6 +57,7 @@ const AllToys = () => {
         </div>
       </div>
       <div className="overflow-x-auto px-4">
+        <h1 className="text-2xl font-semibold">All toyes : {product.length}</h1>
         <table className="table table-compact w-full ">
           <thead>
             <tr>

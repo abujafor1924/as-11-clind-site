@@ -9,9 +9,7 @@ const ReactTab = () => {
   const [subCategory, setSubCategory] = useState(true);
 
   useEffect(() => {
-    fetch(
-      `https://assingment-eleven-server.vercel.app/getcategory?cat=${subCategory}`
-    )
+    fetch(`http://localhost:4000/getcategory?cat=${subCategory}`)
       .then((res) => res.json())
       .then((data) => {
         const filter = data.filter((pd) => pd.subCategory == subCategory);

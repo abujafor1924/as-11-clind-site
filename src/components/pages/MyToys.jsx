@@ -3,9 +3,11 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 import UpdateData from "./UpdateData";
 import useTitle from "../../hook/useTitle";
+import { useNavigate } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [id, setId] = useState({});
   useTitle("My-Toys");
   const [myProduct, setMyProduct] = useState([]);
@@ -15,18 +17,27 @@ const MyToys = () => {
   useEffect(() => {
     fetch(
       // `https://assingment-eleven-server.vercel.app/some-data?email=${user?.email}`,
-      `https://assingment-eleven-server.vercel.app/some-data?sort=${sorting}&email=${user?.email}`,
+      `http://localhost:4000/some-data?sort=${sorting}&email=${user?.email}`,
       {
         method: "GET",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem(
+            "iyad-shop-access-token"
+          )}`,
+        },
         body: JSON.stringify(),
       }
     )
       .then((res) => res.json())
-      .then((result) => {
-        setMyProduct(result);
+      .then((data) => {
+        if (!data.error) {
+          setMyProduct(data);
+        } else {
+          navigate("/");
+        }
       });
-  }, [sorting, myProduct]);
+  }, [sorting, user, navigate]);
 
   const handleDelete = (id) => {
     const proside = confirm("Are You Sure Delete?");

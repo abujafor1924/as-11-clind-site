@@ -9,8 +9,8 @@ const UpdateData = ({ pd, handleDelete, id, setId }) => {
     const quantity = form.quantity.value;
     const update = { price, description, quantity };
     console.log(pd._id);
-    fetch(`https://assingment-eleven-server.vercel.app/update-data/${id._id}`, {
-      method: "PUT",
+    fetch(`http://localhost:4000/update-data/${id._id}`, {
+      method: "PATCH",
 
       headers: {
         "Content-type": "application/json",

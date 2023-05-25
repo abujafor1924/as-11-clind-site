@@ -47,6 +47,25 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       // console.log(currentUser);
       setLoding(false);
+      if (currentUser && currentUser.email) {
+        const logdUser = {
+          email: currentUser.email,
+        };
+        fetch("http://localhost:4000/jwt", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(logdUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            // console.log(data);
+            localStorage.setItem("iyad-shop-access-token", data.token);
+          });
+      } else {
+        localStorage.removeItem("iyad-shop-access-token");
+      }
     });
     // stop obserbing
     return () => {

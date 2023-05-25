@@ -7,7 +7,7 @@ const AllToys = () => {
   const [search, setSearch] = useState("");
   useTitle("All-Toys");
   useEffect(() => {
-    fetch("https://assingment-eleven-server.vercel.app/all-data", {
+    fetch("http://localhost:4000/all-data", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(),

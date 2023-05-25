@@ -37,7 +37,7 @@ const AddToys = () => {
     };
     // console.log(uplodData);
 
-    fetch("https://assingment-eleven-server.vercel.app/product", {
+    fetch("http://localhost:4000/product", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(uplodData),

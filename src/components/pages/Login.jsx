@@ -19,6 +19,7 @@ const Login = () => {
     singIn(email, password)
       .then((result) => {
         const userLogin = result.user;
+
         console.log(userLogin);
         form.reset();
         navigate(from, { replace: true });
